@@ -20,7 +20,7 @@ JOIN warehouse ON warehouse_id = warehouse.id
 WHERE products.description = 'diet pepsi';
 
 -- Get the number of orders for each customer. NOTE: It is OK if those without orders are not included in results.
-SELECT first_name, last_name, count(order_date) FROM customers
+SELECT first_name, last_name, count(orders.id) FROM customers
 JOIN addresses ON customer_id = customers.ID
 JOIN orders ON addresses.id = address_id GROUP BY first_name, last_name;
 
